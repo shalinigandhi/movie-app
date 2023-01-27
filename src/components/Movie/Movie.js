@@ -3,13 +3,20 @@ import { IconPlay, IconAdd } from '../lib/icons';
 import './movie.scss';
 
 const Movie = ({ id, movie }) => {
-    const [active, setActive] = useState();
-   
+    const [active, setActive] = useState(null);
+
+    const handleClick = (id) => {
+        let element = document.getElementsByClassName('activeMovie');
+        if (element && element.length) {
+            element[0].classList.remove("activeMovie");
+        }
+        setActive(id);
+    }
     return (
         <div
             key={id}
-            className={`movie-container ${active === id ? 'active' : 'inactive'}`}
-            onClick={() => setActive(id)}
+            className={`movie-container ${active === id ? 'activeMovie' : 'inactiveMovie'}`}
+            onClick={() => handleClick(id)}
         >
             <div className='movie-short'>
                 <div className='movie-banner'>
