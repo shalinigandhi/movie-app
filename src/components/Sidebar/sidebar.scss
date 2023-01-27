@@ -17,7 +17,7 @@
         flex-direction: column;
         align-items: center;
         padding-bottom: 20px;
-        border-bottom: 1px solid $white-shade1;
+        border-bottom: 1px solid $blue-shade5;
         width: 100%;
 
         .user-img {
@@ -69,7 +69,7 @@
             }
 
             &:nth-child(6), &:nth-child(8) {
-                border-top: 1px solid $white-shade1;
+                border-top: 1px solid $blue-shade5;
                 margin-top: 24px;
                 padding-top: 24px;
             }
