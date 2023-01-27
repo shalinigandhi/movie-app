@@ -2,9 +2,20 @@
 @import './colors';
 @import './reset';
 
-.page-content {
+.page-content-container {
     width: calc(100vw - 275px);
     position: relative;
     left: 275px;
     padding: 42px 48px;
+
+    .page-content-wrapper {
+        margin-top: 40px;
+
+        .error {
+            font-weight: 600;
+            font-size: 21px;
+            line-height: 44px;
+            color: $white;
+        }
+    }
 }

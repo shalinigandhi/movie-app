@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { IconSearch, IconPlaylist, IconMovie, IconTVShows, IconMyList, IconWatchLater, IconRecomended, IconSettings, IconLogout } from '../lib/icons';
 import './sidebar.scss';
 

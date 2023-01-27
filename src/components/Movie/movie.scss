@@ -1,7 +1,6 @@
 @import '../../styles/colors';
 
 .movies-list-wrapper {
-    margin-top: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     column-gap: 26px;
@@ -11,7 +10,14 @@
         background-color: $blue-shade5;
         border-radius: 11px;
         padding: 10px 10px 16px;
-        max-height: 278px;
+        cursor: pointer;
+        display: inline-block;
+        border: 2px solid $blue-shade5;
+
+        &.active {
+            border: 2px solid $blue-shade3;
+        }
+
         .movie-banner {
             height: 188px;
             border-radius: 5px;
