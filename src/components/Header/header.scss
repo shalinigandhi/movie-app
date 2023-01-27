@@ -1,0 +1,44 @@
+@import '../../styles/colors';
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .icon {
+        cursor: pointer;
+    }
+
+    .header-left {
+        &.active {
+            background-color: $blue-shade4;
+            padding: 15px 16px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            min-width: 567px;
+        }
+
+        .search-input {
+            font-weight: 600;
+            font-size: 21px;
+            line-height: 44px;
+            color: $white;
+            background: transparent;
+            border: none;
+            margin: 0 12px;
+            flex-grow: 1;
+
+            &:focus, &:outline {
+                background: transparent;
+                border: none;
+            }
+        }
+    }
+
+    .header-right {
+        > span.icon {
+            margin-right: 25px;
+        }
+    }
+}

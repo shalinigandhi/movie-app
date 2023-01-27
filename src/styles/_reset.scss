@@ -1,0 +1,35 @@
+@import './colors';
+
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+
+html,
+body {
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    background: $blue-shade2;
+    color: $text-shade1;
+}

@@ -1,0 +1,10 @@
+@import './mixin';
+@import './colors';
+@import './reset';
+
+.page-content {
+    width: calc(100vw - 275px);
+    position: relative;
+    left: 275px;
+    padding: 42px 48px;
+}
