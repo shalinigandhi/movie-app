@@ -10,12 +10,14 @@ const Movie = ({ id, movie }) => {
         if (element && element.length) {
             element[0].classList.remove("activeMovie");
         }
+        document.getElementById(id).classList.add("activeMovie");
         setActive(id);
     }
     return (
         <div
             key={id}
-            className={`movie-container ${active === id ? 'activeMovie' : 'inactiveMovie'}`}
+            className={`movie-container`}
+            id={id}
             onClick={() => handleClick(id)}
         >
             <div className='movie-short'>
