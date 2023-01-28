@@ -11,7 +11,7 @@ function App() {
   const [movies, setMovies] = useState(data.movies);
   const [errorMessage, setErrorMessage] = useState(null);
   const [selectedMovie, showSelectedMovie] = useState(null);
-  const [isSidebarOpen, onToggle] = useState(true);
+  const [isSidebarOpen, onToggle] = useState(false);
 
   const onSearch = (movieName) => {
     const tempMovies = [...data.movies];
@@ -42,10 +42,11 @@ function App() {
           onToggle={onToggle}
           isSidebarOpen={isSidebarOpen}
         />
-        <div className={`page-content-container ${isSidebarOpen && 'page-overlay'}`} onClick={() => isMobile && onToggle(false)}>
+        <div className={`page-content-container ${isSidebarOpen && 'page-overlay'}`}>
           <Header
             onSearch={onSearch}
             resetSearch={resetSearch}
+            onToggle={onToggle}
           />
           <main className="page-content-wrapper">
             {
