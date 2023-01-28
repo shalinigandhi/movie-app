@@ -8,8 +8,26 @@
     left: 275px;
     padding: 42px 48px;
 
+    @include tablet {
+        padding: 30px;
+    }
+
+    @include mobileLarge {
+        width: 100%;
+        left: 0;
+        padding: 20px;
+    }
+
     .page-content-wrapper {
         margin-top: 40px;
+
+        @include tablet {
+            margin-top: 30px;
+        }
+
+        @include mobileLarge {
+            margin-top: 20px;
+        }
 
         .error {
             font-weight: 600;
