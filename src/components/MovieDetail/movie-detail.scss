@@ -1,4 +1,5 @@
 @import '../../styles/colors';
+@import '../../styles/mixin';
 
 .movie-detail-container {
     display: flex;
@@ -8,16 +9,30 @@
     max-height: 410px;
     margin-bottom: 26px;
 
+    @include mobileLarge {
+        flex-direction: column;
+        max-height: initial;
+    }
+
     .movie-image {
         img {
             width: 330px;
             height: 410px;
             object-fit: fill;
+
+            @include mobileLarge {
+                height: 200px;
+                width: 100%;
+            }
         }
     }
 
     .movie-details {
         padding: 34px 35px 27px 35px;
+
+        @include mobileLarge {
+            padding: 10px;
+        }
 
         .movie-name {
             font-weight: 700;

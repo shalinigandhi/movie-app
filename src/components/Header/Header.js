@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { IconSearch, IconMode, IconMenu, IconCross } from '../lib/icons';
+import { IconSearch, IconMode, IconMenu, IconCross, IconMyList } from '../lib/icons';
 import './header.scss'
 
 const Header = ({ onSearch, resetSearch }) => {
@@ -37,7 +37,7 @@ const Header = ({ onSearch, resetSearch }) => {
                 <span className={`icon icon-cross ${searchActive && 'active'}`} onClick={reset}><IconCross/></span>
             </div>
             <div className='header-right'>
-                <span className='icon'><IconMode /></span>
+                <span className='icon icon-mode'><IconMode /></span>
                 <span className='icon'><IconMenu/></span>
             </div>
         </header>

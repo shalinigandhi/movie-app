@@ -4,6 +4,7 @@ import Header from '../components/Header/Header';
 import Movie from '../components/Movie/Movie';
 import MovieDetail from '../components/MovieDetail/MovieDetail';
 import data from '../components/lib/data.json';
+import { isMobile } from 'react-device-detect';
 import './App.scss';
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
           onToggle={onToggle}
           isSidebarOpen={isSidebarOpen}
         />
-        <div className={`page-content-container ${isSidebarOpen && 'page-overlay'}`} onClick={() => onToggle(false)}>
+        <div className={`page-content-container ${isSidebarOpen && 'page-overlay'}`} onClick={() => isMobile && onToggle(false)}>
           <Header
             onSearch={onSearch}
             resetSearch={resetSearch}
