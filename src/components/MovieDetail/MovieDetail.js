@@ -1,7 +1,7 @@
 import './movie-detail.scss';
 const MovieDetail = ({ selectedMovie }) => {
     return (
-        <div className="movie-detail-container">
+        <div className="movie-detail-container animated zoom-in">
             <div className="movie-image">
                 <img src={selectedMovie.Poster} alt={selectedMovie.Title} />
             </div>

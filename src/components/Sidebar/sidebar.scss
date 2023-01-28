@@ -15,7 +15,9 @@
     transition: left 0.3s ease-in-out;
 
     &.hide-sidebar {
-        left: -100%;
+        @include mobileLarge {
+            left: -100%;
+        }
     }
 
     @include mobileLarge {

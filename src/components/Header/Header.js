@@ -33,6 +33,7 @@ const Header = ({ onSearch, resetSearch }) => {
                     value={searchValue}
                     onChange={handleSearch}
                     onKeyDown={onKeyDown}
+                    placeholder='Title, Movies, Keyword'
                 />
                 <span className={`icon icon-cross ${searchActive && 'active'}`} onClick={reset}><IconCross/></span>
             </div>

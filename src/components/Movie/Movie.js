@@ -12,6 +12,11 @@ const Movie = ({ id, movie, showMovieDetails }) => {
         }
         document.getElementById(id).classList.add("activeMovie");
         setActive(id);
+        window.scroll({
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth'
+        });
         showMovieDetails(movie);
     }
     return (

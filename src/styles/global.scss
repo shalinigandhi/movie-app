@@ -56,17 +56,22 @@
     line-height: 26px;
     padding: 10px 21px;
     cursor: pointer;
+
+    @include mobileLarge {
+        font-size: 14px;
+    }
 }
 
 .primary-btn {
     display: inline-block;
+    border: 1px solid $blue-shade3;
     background: $blue-shade3;
     color: $black;
 }
 
 .hollow-btn {
     display: inline-block;
-    border: 1px solid #00E0FF;
+    border: 1px solid $blue-shade3;
     color: $blue-shade3;
 }
 
@@ -77,3 +82,39 @@
         display: inline-block;
     }
 }
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+   font-weight: 100;
+}
+::-moz-placeholder { /* Firefox 19+ */
+   font-weight: 100;
+}
+:-ms-input-placeholder { /* IE 10+ */
+   font-weight: 100;
+}
+:-moz-placeholder { /* Firefox 18- */
+   font-weight: 100;
+}
+
+.animated {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+.zoom-in {
+    animation-name: fade-in;
+    animation-timing-function: ease-in;
+}
+
+@keyframes fade-in {
+from {
+    opacity: 0;
+    visibility: hidden;
+}
+
+to {
+    opacity: 1;
+    visibility: visible;
+}
+}
+
