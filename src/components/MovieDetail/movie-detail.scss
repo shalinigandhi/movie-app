@@ -38,10 +38,6 @@
             padding: 20px;
         }
 
-        @include mobileLarge {
-            padding: 10px;
-        }
-
         .movie-name {
             font-weight: 700;
             font-size: 30px;
