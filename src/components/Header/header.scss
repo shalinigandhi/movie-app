@@ -10,13 +10,18 @@
     }
 
     .header-left {
+        width: 25px;
+        height: 74px;
+        padding: 15px 16px;
+        display: flex;
+        align-items: center;
+        transition: width 0.5s ease-in-out;
         &.active {
-            background-color: $blue-shade4;
-            padding: 15px 16px;
+            width: 567px;
+            // padding: 15px 16px;
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            min-width: 567px;
+            background-color: $blue-shade4;
+            
         }
 
         .search-input {
@@ -28,11 +33,28 @@
             border: none;
             margin: 0 12px;
             flex-grow: 1;
+            opacity: 0;
+            visibility: hidden;
+
+            &.active {
+                opacity: 1;
+                visibility: visible;
+            }
 
             &:focus {
                 background: transparent;
                 border: none;
                 outline: none;
+            }
+        }
+
+        .icon-cross {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s 0.5s ease-in-out;
+            &.active {
+                opacity: 1;
+                visibility: visible;
             }
         }
     }

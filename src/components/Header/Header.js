@@ -3,6 +3,7 @@ import { IconSearch, IconMode, IconMenu, IconCross } from '../lib/icons';
 import './header.scss'
 
 const Header = ({ onSearch, resetSearch }) => {
+    const [searchActive, setSearchActive] = useState(false);
     const [searchValue, setSearchValue] = useState("");
 
     const handleSearch = (e) => {
@@ -13,6 +14,7 @@ const Header = ({ onSearch, resetSearch }) => {
     const reset = () => {
         setSearchValue("");
         resetSearch();
+        setSearchActive(false);
     }
 
     const onKeyDown = (e) => {
@@ -23,16 +25,16 @@ const Header = ({ onSearch, resetSearch }) => {
 
     return (
         <header className='header-wrapper'>
-            <div className='header-left active'>
-                <span className='icon'><IconSearch width='23' height='23' /></span>
+            <div className={`header-left ${searchActive && 'active'}`}>
+                <span className='icon' onClick={() => setSearchActive(true)}><IconSearch width='23' height='23' /></span>
                 <input
-                    className='search-input'
+                    className={`search-input ${searchActive && 'active'}`}
                     type="text"
                     value={searchValue}
                     onChange={handleSearch}
                     onKeyDown={onKeyDown}
                 />
-                <span className='icon' onClick={reset}><IconCross/></span>
+                <span className={`icon icon-cross ${searchActive && 'active'}`} onClick={reset}><IconCross/></span>
             </div>
             <div className='header-right'>
                 <span className='icon'><IconMode /></span>
