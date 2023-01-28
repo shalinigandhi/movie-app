@@ -7,6 +7,7 @@
     position: relative;
     left: 275px;
     padding: 42px 48px;
+    position: relative;
 
     @include tablet {
         padding: 30px;
@@ -16,6 +17,16 @@
         width: 100%;
         left: 0;
         padding: 20px;
+
+        &.page-overlay:before {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background: rgba(0,0,0,0.6);
+            content: '';
+        }
     }
 
     .page-content-wrapper {
@@ -57,4 +68,12 @@
     display: inline-block;
     border: 1px solid #00E0FF;
     color: $blue-shade3;
+}
+
+.hide-desktop {
+    display: none;
+
+    @include mobileLarge {
+        display: inline-block;
+    }
 }

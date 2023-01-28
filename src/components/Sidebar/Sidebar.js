@@ -1,12 +1,21 @@
 import React, { useState } from 'react'
-import { IconSearch, IconPlaylist, IconMovie, IconTVShows, IconMyList, IconWatchLater, IconRecomended, IconSettings, IconLogout } from '../lib/icons';
+import { isMobile } from 'react-device-detect';
+import { IconSearch, IconPlaylist, IconMovie, IconTVShows, IconMyList, IconWatchLater, IconRecomended, IconSettings, IconLogout, IconCross } from '../lib/icons';
 import './sidebar.scss';
 
-const Sidebar = () => {
+const Sidebar = ({onToggle, isSidebarOpen}) => {
     const [active, setActive] = useState(0);
 
+    const onNavigation = (id) => {
+        setActive(id);
+        if(isMobile) {
+            onToggle(false);
+        }
+    }
+
     return (
-        <aside className="sidebar-wrapper">
+        <aside className={`sidebar-wrapper ${!isSidebarOpen && 'hide-sidebar'}`}>
+            <span className='icon-cross hide-desktop' onClick={() => onToggle(false)}><IconCross/></span>
             <div className="profile-details">
                 <div className="user-img">
                     <img src="/images/userImg.svg" alt="Eric Hoffman"/>
@@ -19,7 +28,7 @@ const Sidebar = () => {
                         <li
                             key={link.id}
                             className={`nav-link ${active == link.id && 'active'}`}
-                            onClick={() => setActive(link.id)}
+                            onClick={() => onNavigation(link.id)}
                         >
                             <span className="icon">{link.icon}</span>
                             <span className="name">{link.name}</span>

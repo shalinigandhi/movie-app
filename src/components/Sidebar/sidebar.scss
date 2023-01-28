@@ -12,10 +12,23 @@
     left: 0;
     top: 0;
     bottom: 0;
+    transition: left 0.3s ease-in-out;
+
+    &.hide-sidebar {
+        left: -100%;
+    }
 
     @include mobileLarge {
         z-index: 1;
-        padding: 20px 0;
+        padding: 25px 0;
+    }
+
+    .icon-cross {
+        @include mobileLarge {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+        }
     }
 
     .profile-details {
