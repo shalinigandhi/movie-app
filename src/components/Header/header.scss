@@ -42,6 +42,10 @@
             border-radius: 8px;
             background-color: $blue-shade4;
 
+            @include tablet {
+                width: 370px;
+            }
+
             @include mobileLarge {
                 width: 240px;
             }

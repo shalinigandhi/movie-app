@@ -2,8 +2,13 @@
 @import './colors';
 @import './reset';
 
+.page-wrapper {
+    max-width: 1440px;
+}
+
 .page-content-container {
-    width: calc(100vw - 275px);
+    max-width: 1440px;
+    width: calc(100% - 275px);
     position: relative;
     left: 275px;
     padding: 42px 48px;
