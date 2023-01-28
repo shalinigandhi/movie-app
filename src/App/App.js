@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import Sidebar from '../components/Sidebar/Sidebar';
 import Header from '../components/Header/Header';
 import Movie from '../components/Movie/Movie';
+import MovieDetail from '../components/MovieDetail/MovieDetail';
 import data from '../components/lib/data.json';
 import './App.scss';
 
 function App() {
   const [movies, setMovies] = useState(data.movies);
   const [errorMessage, setErrorMessage] = useState(null);
+  const [selectedMovie, showSelectedMovie] = useState(null);
 
   const onSearch = (movieName) => {
     const tempMovies = [...data.movies];
@@ -26,6 +28,11 @@ function App() {
     setMovies([...data.movies]);
   }
 
+  const showMovieDetails = (movie) => {
+    showSelectedMovie(movie);
+    console.log(selectedMovie);
+  }
+
   return (
     <div className="page-wrapper">
       <div className='container'>
@@ -37,6 +44,12 @@ function App() {
           />
           <main className="page-content-wrapper">
             {
+              selectedMovie && Object.keys(selectedMovie).length &&
+              <MovieDetail
+                selectedMovie={selectedMovie}
+              />
+            }
+            {
               movies && movies.length ?
                 <div className="movies-list-wrapper">
                   {
@@ -45,6 +58,7 @@ function App() {
                         key={index}
                         id={index}
                         movie={movie}
+                        showMovieDetails={showMovieDetails}
                       />
                     ))
                   }
